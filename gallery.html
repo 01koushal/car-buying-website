@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Gallery</title>
+<style>
+    /* White Theme Styling for the Gallery Page */
+    body {
+        background-color: #fff;
+        color: #333;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Home Button Styling */
+    .home-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        background-color: #ff8000;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .home-button:hover {
+        background-color: #e67300;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        overflow: auto;
+    }
+
+    /* Lightbox Image */
+    .lightbox img {
+        max-width: 95%;
+        max-height: 95%;
+        object-fit: contain;
+        margin: auto;
+        display: block;
+    }
+
+    /* When the lightbox is targeted, show it */
+    .lightbox:target {
+        display: flex;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: #fff;
+        text-decoration: none;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    .close-button:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Home Button -->
+    <a href="index.html" class="home-button">Home</a>
+
+    <h1>Car Gallery</h1>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+        <!-- Gallery Items -->
+        <a href="#lightbox1" class="gallery-item">
+            <img src="https://m.economictimes.com/thumb/msid-110533985,width-1200,height-900,resizemode-4,imgsize-58280/porsche.jpg" alt="Porsche 911">
+        </a>
+        <a href="#lightbox2" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfLhh-74ynEqM-Vl1I52Fr0nOEgIpA7_dUFQgLCvpCIeQO7f0pztpRuq_PSpb6sksQAt4&usqp=CAU" alt="Holiday Offers">
+        </a>
+        <a href="#lightbox3" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsX5hZXYRYGBE0F8Jf21lJuL6NcqBBppeSWw&s" alt="Luxury Car Expo">
+        </a>
+        <a href="#lightbox4" class="gallery-item">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/ff/c0/99/track-day-experience.jpg" alt="Test Drive Day">
+        </a>
+        <a href="#lightbox5" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS3d_PnRagNTnZ3H-ijvLRgtZnQ_uyyU6qSg&s" alt="Exclusive Preview Event">
+        </a>
+        <a href="#lightbox6" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZKiOvVQfPgP4PY4kqxg0dna6tM8r-csEyxw&s" alt="Exclusive Preview Event">
+        </a>
+        <a href="#lightbox7" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnHZKX4v9O0zGSQyR7quWDg9e49ChG5gWHJw&s" alt="Exclusive Preview Event">
+        </a>
+        <a href="#lightbox8" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHjN_vSLP1dOradrIZMbzzi7SIgYkcelIeDQ&s" alt="Exclusive Preview Event">
+        </a>
+        <a href="#lightbox9" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU8eYLaBFiK5f2pUzHpBiF_eYocww_-ecSpQ&s" alt="Exclusive Preview Event">
+        </a>
+        <a href="#lightbox10" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXoj3iEtWM6yZe9ANU-9OAZDeGcNvfPnnqAg&s" alt="Exclusive Preview Event">
+        </a>
+        <a href="#lightbox11" class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbIN6gFnsdAuXqlu1dVmA2DidXEqWDnExWEQ&s" alt="Exclusive Preview Event">
+        </a>
+    </div>
+</div>
+
+<!-- Lightbox Modals -->
+<div id="lightbox1" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://m.economictimes.com/thumb/msid-110533985,width-1200,height-900,resizemode-4,imgsize-58280/porsche.jpg" alt="Porsche 911">
+</div>
+
+<div id="lightbox2" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfLhh-74ynEqM-Vl1I52Fr0nOEgIpA7_dUFQgLCvpCIeQO7f0pztpRuq_PSpb6sksQAt4&usqp=CAU" alt="Holiday Offers">
+</div>
+
+<div id="lightbox3" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsX5hZXYRYGBE0F8Jf21lJuL6NcqBBppeSWw&s" alt="Luxury Car Expo">
+</div>
+
+<div id="lightbox4" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/ff/c0/99/track-day-experience.jpg" alt="Test Drive Day">
+</div>
+
+<div id="lightbox5" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS3d_PnRagNTnZ3H-ijvLRgtZnQ_uyyU6qSg&s" alt="Exclusive Preview Event">
+</div>
+
+<div id="lightbox6" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZKiOvVQfPgP4PY4kqxg0dna6tM8r-csEyxw&s" alt="Exclusive Preview Event">
+</div>
+
+<div id="lightbox7" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnHZKX4v9O0zGSQyR7quWDg9e49ChG5gWHJw&s" alt="Exclusive Preview Event">
+</div>
+
+<div id="lightbox8" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHjN_vSLP1dOradrIZMbzzi7SIgYkcelIeDQ&s" alt="Exclusive Preview Event">
+</div>
+
+<div id="lightbox9" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU8eYLaBFiK5f2pUzHpBiF_eYocww_-ecSpQ&s" alt="Exclusive Preview Event">
+</div>
+
+<div id="lightbox10" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXoj3iEtWM6yZe9ANU-9OAZDeGcNvfPnnqAg&s" alt="Exclusive Preview Event">
+</div>
+
+<div id="lightbox11" class="lightbox">
+    <a href="#" class="close-button">&times;</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbIN6gFnsdAuXqlu1dVmA2DidXEqWDnExWEQ&s" alt="Exclusive Preview Event">
+</div>
+
+</body>
+</html>

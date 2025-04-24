@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda civic- Car Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #ff7b54;
+            padding: 1em;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .car-details {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .car-gallery {
+            flex: 1;
+            position: relative;
+        }
+        .car-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px; /* Lower the image */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .gallery-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+        .gallery-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .car-info {
+            flex: 1;
+        }
+        .car-info h1 {
+            font-size: 32px;
+            color: #333;
+        }
+        .car-info p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #555;
+        }
+        .price {
+            font-size: 24px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .rating-system, .global-rating {
+            margin-top: 20px;
+        }
+        .stars {
+            display: flex;
+            gap: 5px;
+        }
+        .stars span {
+            font-size: 25px;
+            cursor: pointer;
+            color: #ccc;
+        }
+        .stars span:hover,
+        .stars span.selected {
+            color: gold;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #ff7b54;
+        }
+        .additional-info {
+            margin-top: 40px;
+        }
+        .info-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fdfdfd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+        .buy-now-section {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .buy-now-button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .buy-now-button:hover {
+            background-color: #218838;
+        }
+        .buy-form {
+            display: none;
+            margin-top: 30px;
+        }
+        .buy-form input, .buy-form select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #0069d9;
+        }
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: #0069d9;
+        }
+        .global-rating {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .global-rating span {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Toyota Camry - 2018 Model
+</header>
+
+<div class="container">
+    <!-- Car Details with Image Gallery -->
+    <div class="car-details">
+        <div class="car-gallery">
+            <img src="https://example.com/placeholder-image.jpg" id="mainImage" alt="Toyota Camry Main Image">
+            <div class="gallery-controls">
+                <button onclick="prevImage()">&#10094;</button>
+                <button onclick="nextImage()">&#10095;</button>
+            </div>
+            <p id="imageDescription">Select an image to view details about the Toyota Camry.</p>
+        </div>
+        <div class="car-info">
+            <h1>Toyota Camry - 2018</h1>
+            <p><strong>Mileage:</strong> 30,000 miles</p>
+            <p><strong>Engine:</strong> 2.5L 4-cylinder</p>
+            <p><strong>Transmission:</strong> Automatic</p>
+            <p><strong>Color:</strong> Silver</p>
+            <p><strong>Price:</strong> <span class="price">$25,000</span></p>
+
+            <h3>Features:</h3>
+            <ul>
+                <li>Touchscreen Infotainment System</li>
+                <li>Backup Camera</li>
+                <li>Lane Departure Alert</li>
+                <li>Bluetooth Connectivity</li>
+                <li>Adaptive Cruise Control</li>
+            </ul>
+
+            <div class="rating-system">
+                <h3>Rate this car:</h3>
+                <div class="stars" id="ratingStars">
+                    <span data-star="1">&#9733;</span>
+                    <span data-star="2">&#9733;</span>
+                    <span data-star="3">&#9733;</span>
+                    <span data-star="4">&#9733;</span>
+                    <span data-star="5">&#9733;</span>
+                </div>
+                <p id="rating-value">Rating: 0/5</p>
+            </div>
+
+            <div class="global-rating">
+                <span>Global Rating: <span id="globalRating">4.2</span>/5</span>
+                <span>Reviews: <span id="numberOfReviews">150</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buy Now Section -->
+    <div class="buy-now-section">
+        <h2>Ready to Buy?</h2>
+        <p>Purchase this Toyota Camry now for $18,000 or request more information below.</p>
+        <button class="buy-now-button" onclick="showBuyForm()">Buy Now</button>
+
+        <!-- Purchase Form -->
+        <div class="buy-form" id="buyForm">
+            <h3>Complete the Form Below:</h3>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <select name="paymentMethod" required>
+                <option value="">Choose Payment Method</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="bank-transfer">Bank Transfer</option>
+                <option value="cash">Cash</option>
+            </select>
+            <button class="submit-button" type="submit">Submit</button>
+        </div>
+    </div>
+
+    <!-- Additional Information Sections -->
+    <div class="additional-info">
+        <div class="info-section">
+            <h2>Vehicle History</h2>
+            <p>This Toyota Camry has been carefully maintained and has a clean accident history. It includes regular service records and has undergone a full inspection for any potential issues.</p>
+        </div>
+        <div class="info-section">
+            <h2>Safety Ratings</h2>
+            <p>With top ratings in crash tests, the Toyota Camry is recognized for its safety features and reliable performance, making it a great choice for families.</p>
+        </div>
+    </div>
+
+    <a class="home-button" href="index.html">Home</a>
+</div>
+
+<script>
+    const images = [
+        "https://imgd.aeplcdn.com/664x374/n/cw/ec/122561/toyota-camry-right-front-three-quarter6.jpeg?isig=0&wm=1&q=80",
+        "https://imgd.aeplcdn.com/664x374/n/cw/ec/122561/toyota-camry-right-front-three-quarter9.jpeg?isig=0&wm=1&q=80",
+        "https://imgd.aeplcdn.com/664x374/n/cw/ec/110233/camry-exterior-grille.jpeg?isig=0&q=80",
+        "https://imgd.aeplcdn.com/664x374/n/cw/ec/110233/2022-camry-interior-rear-row-centre-arm-rest.jpeg?isig=0&q=80"
+    ];
+    let currentImageIndex = 0;
+    const initialGlobalRating = 4.2; // Set global rating as constant
+    const numberOfReviews = 150; // Track the number of reviews as a constant
+
+    function showImage(index) {
+        const mainImage = document.getElementById('mainImage');
+        const imageDescription = document.getElementById('imageDescription');
+        
+        if (images[index]) {
+            mainImage.src = images[index];
+            imageDescription.textContent = `Image ${index + 1} of ${images.length}`;
+        }
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        showImage(currentImageIndex);
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        showImage(currentImageIndex);
+    }
+
+    function showBuyForm() {
+        const form = document.getElementById('buyForm');
+        form.style.display = 'block';
+    }
+
+    // Initialize with the first image
+    showImage(currentImageIndex);
+
+    // Rating functionality
+    const stars = document.querySelectorAll('.stars span');
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const rating = this.getAttribute('data-star');
+            document.getElementById('rating-value').textContent = `Rating: ${rating}/5`;
+            // Update global rating (for demonstration, this is static)
+            const globalRatingElement = document.getElementById('globalRating');
+            const currentGlobalRating = parseFloat(globalRatingElement.textContent);
+            const newGlobalRating = ((currentGlobalRating * numberOfReviews) + parseInt(rating)) / (numberOfReviews + 1);
+            globalRatingElement.textContent = newGlobalRating.toFixed(1); // Round to one decimal place
+            // No need to increment numberOfReviews since it's a constant
+            document.getElementById('numberOfReviews').textContent = numberOfReviews;
+
+            // Store the rating (for demonstration purposes, it's just logged)
+            console.log(`Rating submitted: ${rating}/5`);
+            stars.forEach(s => s.classList.remove('selected'));
+            for (let i = 0; i < rating; i++) {
+                stars[i].classList.add('selected');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

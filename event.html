@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Event Planner</title>
+<style>
+    /* White Theme Styling */
+    body {
+        background-color: #fff;
+        color: #333;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Home Button Styling */
+    .home-button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        background-color: #ff8000;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .home-button:hover {
+        background-color: #e67300;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .search-bar button {
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #ff8000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .search-bar button:hover {
+        background-color: #e67300;
+    }
+
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+        flex: 1;
+        min-width: 120px;
+        padding: 10px;
+        font-size: 14px;
+        color: #fff;
+        background-color: #ff8000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .filter-buttons button:hover {
+        background-color: #e67300;
+    }
+
+    .event-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .event-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .event-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .event-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .event-details {
+        font-size: 14px;
+        color: #555;
+    }
+
+    @media (min-width: 768px) {
+        .search-bar {
+            flex-direction: row;
+        }
+
+        .search-bar input[type="text"] {
+            width: 75%;
+        }
+
+        .search-bar button {
+            width: 20%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Home Button -->
+    <a href="index.html" class="home-button">Home</a>
+
+    <h1>Upcoming Car Events</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search for events...">
+        <button>Search</button>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+        <button>All Events</button>
+        <button>New Car Arrivals</button>
+        <button>Special Offers</button>
+        <button>Exclusive Events</button>
+        <button>Test Drive Days</button>
+        <button>Car Expo</button>
+    </div>
+
+    <!-- Event List -->
+    <div class="event-list">
+        <!-- Sample Event Card 1 -->
+        <div class="event-card">
+            <img src="https://m.economictimes.com/thumb/msid-110533985,width-1200,height-900,resizemode-4,imgsize-58280/porsche.jpg" alt="Event Image" class="event-image">
+            <div class="event-title">Porsche 911 Launch</div>
+            <div class="event-details">
+                Date: November 25, 2024<br>
+                Location: Porsche Showroom, LA<br>
+                Description: Exclusive launch of the latest Porsche 911 model.
+            </div>
+        </div>
+
+        <!-- Sample Event Card 2 -->
+        <div class="event-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfLhh-74ynEqM-Vl1I52Fr0nOEgIpA7_dUFQgLCvpCIeQO7f0pztpRuq_PSpb6sksQAt4&usqp=CAU" alt="Event Image" class="event-image">
+            <div class="event-title">Holiday Offers</div>
+            <div class="event-details">
+                Date: Dec 15 - Dec 31, 2024<br>
+                Location: All Dealerships<br>
+                Description: Discounts on selected car models this holiday season.
+            </div>
+        </div>
+
+        <!-- Sample Event Card 3 -->
+        <div class="event-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsX5hZXYRYGBE0F8Jf21lJuL6NcqBBppeSWw&s" alt="Event Image" class="event-image">
+            <div class="event-title">Luxury Car Expo</div>
+            <div class="event-details">
+                Date: January 10, 2025<br>
+                Location: Convention Center<br>
+                Description: Discover the latest luxury cars.
+            </div>
+        </div>
+
+        <!-- Sample Event Card 4 -->
+        <div class="event-card">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/ff/c0/99/track-day-experience.jpg" alt="Event Image" class="event-image">
+            <div class="event-title">Test Drive Day</div>
+            <div class="event-details">
+                Date: February 5, 2025<br>
+                Location: Local Dealerships<br>
+                Description: Experience a test drive with the latest models.
+            </div>
+        </div>
+
+        <!-- Sample Event Card 5 -->
+        <div class="event-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS3d_PnRagNTnZ3H-ijvLRgtZnQ_uyyU6qSg&s" alt="Event Image" class="event-image">
+            <div class="event-title">Exclusive Preview Event</div>
+            <div class="event-details">
+                Date: March 18, 2025<br>
+                Location: VIP Showroom<br>
+                Description: Get a sneak peek at upcoming releases.
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List - Car Buying Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff7b54, #ff5722);
+            color: #fff;
+            padding: 1.5em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd9b3;
+        }
+
+        .blog-list-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-item {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.3s ease;
+        }
+
+        .blog-item:last-child {
+            border-bottom: none;
+        }
+
+        .blog-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .blog-item h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #ff5722;
+        }
+
+        .blog-item p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        .blog-item a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ff5722;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .blog-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blog List Container -->
+    <div class="blog-list-container">
+        <h1>Our Latest Blogs</h1>
+
+        <div class="blog-item">
+            <h2><a href="blog1.html">Porsche 911 Dakar: A Sports Car Like No Other</a></h2>
+            <p>The Porsche 911 Dakar combines iconic design with off-road capability. Discover its features and performance.</p>
+        </div>
+
+        <div class="blog-item">
+            <h2><a href="blog2.html">All new Bugatti tourbillion</a></h2>
+            <p>open to read more</p>
+        </div>
+
+        <div class="blog-item">
+            <h2><a href="blog3.html">The Godzilla</a></h2>
+            <p>open to read more</p>
+        </div>
+
+        <!-- Add more blog items as needed -->
+    </div>
+
+</body>
+</html>

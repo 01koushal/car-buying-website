@@ -1,0 +1,54 @@
+/* Dark Theme for Car Website */
+body {
+  background-color: #0e0e0e; /* Dark background to contrast with 3D models */
+  color: #f5f5f5; /* Light text for readability */
+  font-family: 'Helvetica', sans-serif;
+  margin: 0;
+}
+
+header, footer {
+  background-color: #1a1a1a; /* Dark background for header and footer */
+  color: #ffffff;
+  padding: 1rem;
+}
+
+a {
+  color: #ffcc00; /* Accent color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffdd44;
+}
+
+button, input, select {
+  background-color: #333;
+  color: #f5f5f5;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+.spline-viewer-container {
+  background-color: #181818; /* Darker background for Spline viewer container */
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.model-description {
+  color: #cccccc; /* Muted text color for descriptions */
+  margin-top: 1rem;
+}
+
+footer {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #aaaaaa;
+  padding: 1rem;
+}
+
+/* Add any other customizations specific to each page or model presentation here */
